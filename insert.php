@@ -5,8 +5,15 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $username = $_POST['uname'];
 $age = $_POST['age'];
-$admin_result = ($_POST['admin'])? 'admin': 'basic_user';
+$admin_result = (isset($_POST['admin']) && $_POST['admin'] === "on")? 'admin': 'basic_user';
 
+echo 'fname: '.$fname.'<br>';
+echo 'lname '.$lname.'<br>';
+echo 'username '.$username.'<br>';
+echo 'age '.$age.'<br>';
+echo 'admin? '.$admin_result.'<br>';
+
+$admin_result = ($admin_result == '')? 'admin':
 $user_conn = "INSERT INTO user (username,fname,lname,age)
         VALUES ('$username', '$fname', '$lname', '$age')";
 
