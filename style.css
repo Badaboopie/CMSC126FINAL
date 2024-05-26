@@ -99,7 +99,7 @@ ul {
 .active {
     background-color: #04AA6D;
 }
-.register-title{
+.title{
     font-size: 50px;
 }
 
@@ -107,8 +107,4 @@ table{
     margin-left: 30px;
     margin-top: 20px;
     border-spacing: 15px;
-}
-
-tr{
-    line-s
 }
