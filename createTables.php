@@ -9,7 +9,7 @@ $user = "CREATE TABLE user(
     fname VARCHAR(50) NOT NULL,
     lname VARCHAR(50) NOT NULL,
     age INT(50),
-    date_registered INT
+    date_registered DATE
     )";
 
 if ($conn->query($user) === TRUE){
