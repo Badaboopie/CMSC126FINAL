@@ -8,7 +8,8 @@ $user = "CREATE TABLE user(
     username VARCHAR(100) NOT NULL, 
     fname VARCHAR(50) NOT NULL,
     lname VARCHAR(50) NOT NULL,
-    age INT(50)
+    age INT(50),
+    date_registered INT
     )";
 
 if ($conn->query($user) === TRUE){
@@ -19,8 +20,8 @@ if ($conn->query($user) === TRUE){
 
 $admin = "CREATE TABLE admin_user(
     adminID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    userID INT,
-    FOREIGN KEY (userID) REFERENCES user(userID)
+    admin_userID INT,
+    FOREIGN KEY (admin_userID) REFERENCES user(userID)
     )";
 
 if ($conn->query($admin) === TRUE){
