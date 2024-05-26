@@ -35,5 +35,7 @@ if ($admin_result == 'admin'){
         echo "<br> Error inserting to database: " . $conn->error;
     }
 }
+header('refresh:0; url=Home.html');
+exit();
 
 ?>

@@ -14,11 +14,40 @@ body, html {
     font-family: Arial, sans-serif; 
 }
 
+a{
+    text-decoration: none;
+}
+
+/* header section */
+
+.header-container{
+    width: 80%;
+    padding-block: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.header-container a{
+    color: white;
+    background-color: #777777;
+    text-decoration: none;
+    border-radius: 30px;
+    padding-inline: 15px;
+    padding-block: 8px;
+    margin-inline: 10px;
+}
+
+.header-container a:hover{
+    background-color: #aaaaaa;
+}
+
+/* search bar section */
 .search-container {
     text-align: center;
     margin-top: 30px;
     position: relative;
-    margin-bottom: 20px
+    margin-bottom: 5px
 }
 
 .search {
@@ -40,8 +69,6 @@ body, html {
     outline: none;
 }
 
-
-
 .search img {
     position: absolute;
     right: 10px;
@@ -51,49 +78,52 @@ body, html {
     height: 20px;
 }
 
-.header-container{
-    width: 80%;
-    display: flex;
-    justify-content: end;
-    align-items: end;
+/* navBar Section */
+.navBar{
+    margin-top: 0;
+    padding-top: 0;
 }
 
-.navbar{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 45%;
-}
-
-li {
+.navBar li{
     display: inline;
+    background-color: #535353;
     padding: 30px 30px;
-    border-right: 1px solid #bbb;
-  }
-li a {
+}
+
+.navBar li:first-child{
+    background-color: #535353;
+    border-radius: 100% 0px 0px 100%;
+}
+
+.navBar li:last-child {
+    background-color: #535353;
+    border-radius: 0% 100% 100% 0%;
+}
+
+.navBar li a {
     color: white;
     text-align: center;
-    padding-left: 30px;
-    padding-right: 30px;
     text-decoration: none;
-  }
-li a:hover {
-    background-color: #111;
 }
 
-li:last-child {
-    border-right: none;
-  }
-
-ul {
-    border-radius: 20px;
+.navBar li:hover {
     background-color: #333;
+}
+
+
+.navBar ul {
     list-style-type: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    margin-top: 0px;
+    padding-inline: 0%;
+    padding-block: 10px;
+    border-radius: 20px;
     width: 100%;
     overflow: hidden;
+}
+/* end of navbar section */
+
+#addlocation{
+
 }
 
 .active {
