@@ -5,6 +5,7 @@ include 'dbconnector.php';
 
 $user = "CREATE TABLE user(
     userID INT(50) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    email VARCHAR(75),
     username VARCHAR(100) NOT NULL, 
     fname VARCHAR(50) NOT NULL,
     lname VARCHAR(50) NOT NULL,
@@ -19,7 +20,7 @@ if ($conn->query($user) === TRUE){
 }
 
 $admin = "CREATE TABLE admin_user(
-    adminID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(75) PRIMARY KEY NOT NULL,
     admin_userID INT,
     FOREIGN KEY (admin_userID) REFERENCES user(userID)
     )";
