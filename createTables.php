@@ -47,9 +47,9 @@ if ($conn->query($location) === TRUE){
 
 
 $restaurant = "CREATE TABLE restaurant(
-    restaurantID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     resto_name VARCHAR(50),
     loc_id INT,
+    menu VARCHAR(100),
     FOREIGN KEY (loc_id) REFERENCES establishmentLocation(loc_id)
     )";
 
@@ -61,9 +61,10 @@ if ($conn->query($restaurant) === TRUE){
 
 
 $boarding_house = "CREATE TABLE boarding_house(
-    bhouseID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     bhouse_name VARCHAR(50),
     loc_id INT,
+    availablrooms INT,
+    rent INT,
     FOREIGN KEY (loc_id) REFERENCES establishmentLocation(loc_id)
     )";
 
@@ -74,11 +75,12 @@ if ($conn->query($boarding_house) === TRUE){
 }
 
 $general_store = "CREATE TABLE general_store(
-    g_storeID INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     gstore_name VARCHAR(50),
     loc_id INT,
+    products VARCHAR(100),
     FOREIGN KEY (loc_id) REFERENCES establishmentLocation(loc_id)
     )";
+
 
 if ($conn->query($general_store) === TRUE){
     echo "<br> General Store table created successfully"; 

@@ -30,33 +30,37 @@
             echo 'location inserted successfully<br>';
             switch($loctype){
                 case 1:
-                    $last_restaurantID = $conn->insert_id;
-                    $restaurant_conn = "INSERT INTO restaurant (restaurantID,resto_name, loc_id)
-                        SELECT '$last_restaurantID','$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
+                    $restaurant_conn = "INSERT INTO restaurant (resto_name, loc_id)
+                        SELECT '$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
 
                     if($conn->query($restaurant_conn)){
-                        echo 'restaurant inserted successfully<br>';
+                        echo '<script type="text/javascript">
+                        window.onload = function() { alert("Restaruant inserted successfully"); } 
+                        </script>';
                     }
                     break;
                 case 2:
-                    $last_bhouseID = $conn->insert_id;
-                    $bhouse_conn = "INSERT INTO boarding_house (bhouseID,bhouse_name, loc_id)
-                        SELECT '$last_bhouseID','$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
+                    $bhouse_conn = "INSERT INTO boarding_house (bhouse_name, loc_id)
+                        SELECT '$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
                     if($conn->query($bhouse_conn)){
-                        echo 'boarding house inserted successfully<br>';
+                        echo '<script type="text/javascript">
+                        window.onload = function() { alert("Boarding House inserted successfully"); } 
+                        </script>';
                     }
                     break;
 
                 case 3:
-                    $general_storeID = $conn->insert_id;
-                    $store_conn = "INSERT INTO general_store (storeID,store_name, loc_id)
-                        SELECT '$general_storeID','$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
+                    $store_conn = "INSERT INTO general_store (store_name, loc_id)
+                        SELECT '$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
 
                     if($conn->query($store_conn)){
-                        echo 'general store inserted successfully<br>';
+                        echo '<script type="text/javascript">
+                        window.onload = function() { alert("General Store inserted successfully"); } 
+                        </script>';
                     }
                     break;
                 default:
+                    echo 'Invalid location type';
                     break;
             }
         } else {
