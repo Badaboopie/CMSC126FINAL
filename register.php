@@ -35,6 +35,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Password: </td>
+                    <td>
+                        <input type="password" name="password" id="password" required>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <input type="checkbox" name="admin">Admin
                     </td>
