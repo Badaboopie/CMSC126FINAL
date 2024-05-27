@@ -11,8 +11,9 @@ if(isset($_POST['submit'])){
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()){
             if ($password == $row["userpassword"]) {
+                $_SESSION['fname'] = $row['fname'];
+                $_SESSION['lname'] = $row['lname'];
                 header('Location:afterlogin.php');
-
             } else {
                 echo '<script> alert("Wrong Password"); </script>';    
             }

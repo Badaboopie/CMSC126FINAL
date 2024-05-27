@@ -1,3 +1,7 @@
+<?php
+include 'dbconnector.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome</h1>    
+    <h1>Welcome <?php echo $_SESSION['fname']?></h1>     
 
     <div class="header-container">
         <a href="Home.html">Log out</a>
