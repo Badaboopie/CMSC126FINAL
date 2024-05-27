@@ -6,6 +6,7 @@ $lname = $_POST['lname'];
 $username = $_POST['uname'];
 $age = $_POST['age'];
 $email = $_POST['email'];
+$password = $_POST['password'];
 $admin_result = (isset($_POST['admin']) && $_POST['admin'] === "on")? 'admin': 'basic_user';
 
 echo 'fname: '.$fname.'<br>';
@@ -25,8 +26,8 @@ if ($duplicate_result->num_rows > 0) {
     header('refresh:0; url=register.php');
 
 } else {
-    $user_conn = "INSERT INTO user (username,email,fname,lname,age, date_registered)
-        VALUES ('$username', '$email','$fname', '$lname', '$age', (SELECT  CURRENT_TIMESTAMP))";
+    $user_conn = "INSERT INTO user (username,email,fname,lname,age, date_registered, userpassword)
+        VALUES ('$username', '$email','$fname', '$lname', '$age', (SELECT  CURRENT_TIMESTAMP), '$password')";
     
     //INSERTING TO ADMIN TABLE
     if ($admin_result == 'admin'){
@@ -52,7 +53,7 @@ if ($duplicate_result->num_rows > 0) {
             echo "<br> Error inserting to database: " . $conn->error;
         }
     }
-    // header('refresh:1; url=Home.html');
+    header('refresh:1; url=Home.html');
 }
 exit();
 

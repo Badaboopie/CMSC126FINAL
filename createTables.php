@@ -10,6 +10,7 @@ $user = "CREATE TABLE user(
     fname VARCHAR(50) NOT NULL,
     lname VARCHAR(50) NOT NULL,
     age INT(50),
+    userpassword VARCHAR(75),
     date_registered DATE
     )";
 
@@ -36,7 +37,7 @@ $location = "CREATE TABLE establishmentLocation(
     loc_name VARCHAR(50),
     loc_address VARCHAR(100),
     contact_no INT(13),
-    business_owner VARCHAR(30)
+    business_owner_ID VARCHAR(30)
     )";
 
 if ($conn->query($location) === TRUE){
