@@ -10,7 +10,7 @@ session_start();
     <body>
         <?php
         if (isset($_SESSION['valid'])) {
-            echo $_SESSION['username'];
+            echo "WELCOME ".$_SESSION['username'];
             echo "<div class='header-container'>".
                 "<a href='logout.php'>Log out</a>".
                 "</div";
