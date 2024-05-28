@@ -25,5 +25,7 @@
                 "</tr>";
         }
     echo "</table>";
+    echo "<a href='Home.php'>Home</a>";
+
     $conn->close();
 ?>
