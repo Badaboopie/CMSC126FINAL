@@ -13,6 +13,7 @@ if(isset($_POST['submit'])){
             if ($password == $row["userpassword"]) {
                 $_SESSION['valid'] = true;
                 $_SESSION['username'] = $row['username'];
+                $_SESSION['userID'] = $row['userID'];
                 header('Location:Home.php');
             } else {
                 echo '<script> alert("Wrong Password"); </script>';    

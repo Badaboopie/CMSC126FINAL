@@ -53,7 +53,7 @@ if ($duplicate_result->num_rows > 0) {
             echo "<br> Error inserting to database: " . $conn->error;
         }
     }
-    header('refresh:1; url=Home.html');
+    header('refresh:1; url=Home.php');
 }
 exit();
 

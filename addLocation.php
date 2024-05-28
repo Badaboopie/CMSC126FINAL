@@ -1,6 +1,10 @@
+<?php
+include 'dbconnector.php';
+?>
+
 <!DOCTYPE html>
 <html>
-    <h2>ADDING LOCATION</h2>
+    <h2>ADDING BUSINESS</h2>
     <body>
         <form action="insert_location.php" method="post">
             <table>
@@ -14,7 +18,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Location Name: </td>
+                    <td>Business Name: </td>
                     <td>
                         <input type="text" name="locname" id="locname">
                     </td>
