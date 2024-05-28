@@ -7,12 +7,6 @@
     $owner = $_POST['owner'];
     $contact = $_POST['contactno'];
 
-    echo 'Location Type: '.$loctype.'<br>';
-    echo 'Location Name: '.$locname.'<br>';
-    echo 'Address: '.$address.'<br>';
-    echo 'Owner: '.$owner.'<br>';
-    echo 'Contact Number: '.$contact.'<br>';
-
     $duplicate = "SELECT * FROM establishmentlocation WHERE loc_name = '$locname'";
     $duplicate_result = $conn->query($duplicate);
 
