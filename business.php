@@ -46,7 +46,7 @@ include 'dbconnector.php';
 
                 echo "<td>". 
                     "<form action='deletebusiness.php' method='post'>".
-                    "<input type='text' style='display:none;' name='loc_ID' value='".$row["loc_ID"]."'>".
+                    "<input type='hidden' style='display:none;' name='loc_ID' value='".$row["loc_ID"]."'>".
                     "<button type='submit'>Delete</button>".
                     "</form>";
                     "</td>".

@@ -74,4 +74,6 @@
     } else {
         echo "0 results";
     }
+
+    echo "<a href='Home.php'>Home</a>";
 ?>

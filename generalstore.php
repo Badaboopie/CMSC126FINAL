@@ -23,4 +23,5 @@
                     "<td>".$row['products']."</td>".
                 "</tr>";
         }
+    echo "<a href='Home.php'>Home</a>";
 ?>
