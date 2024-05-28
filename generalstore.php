@@ -1,6 +1,6 @@
 <?php
     include 'dbconnector.php';
-    $sql = "SELECT * FROM establishmentLocation WHERE loc_type = 'General Store' INNER JOIN general_store ON establishmentLocation.loc_ID = general_store.loc_ID";
+    $sql = "SELECT * FROM establishmentLocation INNER JOIN general_store ON establishmentLocation.loc_ID = general_store.loc_id";
     $result = $conn->query($sql);
     echo "<table>".
         "<tr>".
