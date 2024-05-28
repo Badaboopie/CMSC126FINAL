@@ -31,9 +31,9 @@ session_start();
 
         <div class="navBar">
             <ul>
-                <li><a href="">Restaurants</a></li>
+                <li><a href="restaurant.php">Restaurants</a></li>
                 <li><a href="">Boarding Houses</a></li>
-                <li><a href="">General Stores</a></li>
+                <li><a href="generalstore.php">General Stores</a></li>
             </ul>
         </div>
 

@@ -1,7 +1,7 @@
 <?php
     include 'dbconnector.php';
 
-    $sql = "SELECT * FROM establishmentLocation WHERE loc_type = 'restaurant' INNER JOIN restaurant ON establishmentLocation.loc_ID = restaurant.loc_ID";
+    $sql = "SELECT * FROM establishmentLocation INNER JOIN restaurant ON establishmentLocation.loc_ID = restaurant.loc_id";
     $result = $conn->query($sql);
     echo "<table>".
         "<tr>".

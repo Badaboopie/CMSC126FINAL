@@ -20,13 +20,13 @@ include 'dbconnector.php';
     }
 ?>
 <div>
+    <h2>Owned Businesses</h2>
     <table>
         <td>ID</td>
-        <td>Type</td>
         <td>Name</td>
+        <td>Type</td>
         <td>Adress</td>
         <td>Contact #</td>
-        <td>Owner</td>
         <?php
         $owner = $_SESSION['userID'];
 
@@ -38,18 +38,19 @@ include 'dbconnector.php';
 
                 echo"<tr>".
                         "<td>".$row['loc_ID']."</td>".
-                        "<td>".$row['loc_type']."</td>".
                         "<td>".$row['loc_name']."</td>".
+                        "<td>".$row['loc_type']."</td>".
                         "<td>".$row['loc_address']."</td>".
-                        "<td>".$row['contact_no']."</td>".
-                        "<td>".$row['business_owner_ID']."</td>".
+                        "<td>".$row['contact_no']."</td>";
+
+                echo "<td>". 
+                    "<form action='deletebusiness.php' method='post'>".
+                    "<input type='text' style='display:none;' name='loc_ID' value='".$row["loc_ID"]."'>".
+                    "<button type='submit'>Delete</button>".
+                    "</form>";
+                    "</td>".
                     "</tr>";
-                // echo "<p>ID ".$row['loc_ID']."</p>".
-                //     "<p>Type ".$row['loc_type']."</p>".
-                //     "<p>Name ".$row['loc_name']."</p>".
-                //     "<p>Address ".$row['loc_address']."</p>".
-                //     "<p>CN ".$row['contact_no']."</p>".
-                //     "<p>Owner".$row['business_owner_ID']."</p>";
+
             }
         } else {
             echo "0 results";
