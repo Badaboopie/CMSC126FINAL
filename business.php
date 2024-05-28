@@ -50,7 +50,15 @@ include 'dbconnector.php';
                     "<input type='hidden' style='display:none;' name='loc_name' value='".$row["loc_name"]."'>".
                     "<input type='hidden' style='display:none;' name='loc_type' value='".$row["loc_type"]."'>".
                     "<button type='submit'>Delete</button>".
-                    "</form>";
+                    "</form>".
+                    "<td>".
+                    "<form action='update.php' method='post'>".
+                    "<input type='hidden' style='display:none;' name='loc_ID' value='".$row["loc_ID"]."'>".
+                    "<input type='hidden' style='display:none;' name='loc_name' value='".$row["loc_name"]."'>".
+                    "<input type='hidden' style='display:none;' name='loc_type' value='".$row["loc_type"]."'>".
+                    "<input type='hidden' style='display:none;' name='loc_address' value='".$row["loc_address"]."'>".
+                    "<input type='hidden' style='display:none;' name='contact_no' value='".$row["contact_no"]."'>".
+                    "<button type='submit'>Update</button>".
                     "</td>".
                     "</tr>";
 
