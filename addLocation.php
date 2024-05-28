@@ -1,6 +1,13 @@
+<?php
+include 'dbconnector.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <h2>ADDING LOCATION</h2>
+    <?php
+    echo "USERID IS: ". $_SESSION['userID'];
+    ?>
     <body>
         <form action="insert_location.php" method="post">
             <table>

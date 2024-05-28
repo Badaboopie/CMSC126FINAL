@@ -4,8 +4,9 @@
     $loctype = $_POST['loctype'];
     $locname = $_POST['locname'];
     $address = $_POST['address'];
+    $owner = $_SESSION['userID'];
     $contact = $_POST['contactno'];
-
+    
     $duplicate = "SELECT * FROM establishmentlocation WHERE loc_name = '$locname'";
     $duplicate_result = $conn->query($duplicate);
 
