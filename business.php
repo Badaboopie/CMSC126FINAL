@@ -16,6 +16,7 @@ include 'dbconnector.php';
         echo "<div class='header-container'>".
             "<a href='addLocation.php'>Add a Business</a>".
             "<a href='deletebusiness.php'>Remove Business</a>".
+            "<a href='Home.php'>Home</a>".
             "</div>";
     }
 ?>
