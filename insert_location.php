@@ -18,8 +18,8 @@
         header('refresh:0; url=addLocation.html');
     } else {
         $last_loc_id = $conn->insert_id;
-        $location_conn = "INSERT INTO establishmentlocation (loc_ID,loc_type,loc_name,loc_address,contact_no)
-            VALUES ('$last_loc_id','$loctype','$locname','$address','$contact')";
+        $location_conn = "INSERT INTO establishmentlocation (loc_ID,loc_type,loc_name,loc_address,contact_no,business_owner_ID)
+            VALUES ('$last_loc_id','$loctype','$locname','$address','$contact', '$owner')";
         if($conn->query($location_conn)){
             echo 'location inserted successfully<br>';
             switch($loctype){
@@ -44,7 +44,7 @@
                     break;
 
                 case 'General Store':
-                    $store_conn = "INSERT INTO general_store (store_name, loc_id)
+                    $store_conn = "INSERT INTO general_store (gstore_name, loc_id)
                         SELECT '$locname', loc_id FROM establishmentlocation WHERE loc_name = '$locname'";
 
                     if($conn->query($store_conn)){
@@ -62,4 +62,6 @@
         }
         
     }
+
+    echo "<a href='home.php'>Return Home</a>";
 ?>

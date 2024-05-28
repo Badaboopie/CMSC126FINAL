@@ -40,9 +40,7 @@ session_start();
         <?php
         if (isset($_SESSION['valid'])) {
             echo "<div class='header-container'>".
-                "<a href='addLocation.php'>Add a Business</a>".
-                "<a href='removeLocation.php'>Remove Business</a>".
-                "<a href='addLocation.php'>Add Location</a>".
+                "<a href='business.php'>Businesses</a>".
                 "</div";
         }
         ?>
