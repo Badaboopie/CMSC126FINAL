@@ -34,6 +34,7 @@ if ($conn->query($admin) === TRUE){
 
 $location = "CREATE TABLE establishmentLocation(
     loc_ID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    loc_type VARCHAR(50),
     loc_name VARCHAR(50),
     loc_address VARCHAR(100),
     contact_no INT(13),
