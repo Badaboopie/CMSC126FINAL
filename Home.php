@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,11 +8,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="header-container">
-            <a href="login.php">Log in</a>
-            <a href="register.php">Sign up</a>
-        </div>
-        
+        <?php
+        if (isset($_SESSION['valid'])) {
+            echo "WELCOME ".$_SESSION['username'];
+            echo "<div class='header-container'>".
+                "<a href='logout.php'>Log out</a>".
+                "</div";
+        }else{
+            echo "<div class='header-container'>".
+                "<a href='login.php'>Log in</a>".
+                "<a href='register.php'>Sign up</a>".
+                "</div>"; 
+        }
+        ?>
 
         <div class="search-container">
             <div class="search">
@@ -25,6 +36,14 @@
                 <li><a href="">General Stores</a></li>
             </ul>
         </div>
+
+        <?php
+        if (isset($_SESSION['valid'])) {
+            echo "<div class='header-container'>".
+                "<a href='addLocation.php'>Add Location</a>".
+                "</div";
+        }
+        ?>
 
         <div class="information-container"></div>
     </body>

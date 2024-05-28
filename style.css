@@ -57,6 +57,7 @@ a{
     border-radius: 20px;
     overflow: hidden;
     top: 0%;
+    margin-bottom: 5px;
 }
 
 .search-input {
@@ -80,7 +81,7 @@ a{
 
 /* navBar Section */
 .navBar{
-    margin-top: 0;
+    margin-top: 1%;
     padding-top: 0;
 }
 

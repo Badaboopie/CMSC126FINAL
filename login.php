@@ -11,8 +11,9 @@ if(isset($_POST['submit'])){
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()){
             if ($password == $row["userpassword"]) {
-                header('Location:afterlogin.php');
-
+                $_SESSION['valid'] = true;
+                $_SESSION['username'] = $row['username'];
+                header('Location:Home.php');
             } else {
                 echo '<script> alert("Wrong Password"); </script>';    
             }
