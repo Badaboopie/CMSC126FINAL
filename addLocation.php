@@ -5,6 +5,15 @@
         <form action="insert_location.php" method="post">
             <table>
                 <tr>
+                    <td>Location Type: </td>
+                    <td><select name="loctype" id="">
+                            <option value="Restaurant">Restaurant</option>
+                            <option value="Boarding House">Boarding House</option>
+                            <option value="General Store">General Store</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>Location Name: </td>
                     <td>
                         <input type="text" name="locname" id="locname">
@@ -14,12 +23,6 @@
                     <td>Address: </td>
                     <td>
                         <input type="text" name="address" id="lname">        
-                    </td>
-                </tr>
-                <tr>
-                    <td>Owner: </td>
-                    <td>
-                        <input type="text" name="owner" id="uname">
                     </td>
                 </tr>
                 <tr>
