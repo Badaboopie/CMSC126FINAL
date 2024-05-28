@@ -33,7 +33,7 @@ if ($conn->query($admin) === TRUE){
 }
 
 $location = "CREATE TABLE establishmentLocation(
-    loc_ID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    loc_ID INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     loc_type VARCHAR(50),
     loc_name VARCHAR(50),
     loc_address VARCHAR(100),
@@ -49,9 +49,9 @@ if ($conn->query($location) === TRUE){
 
 
 $restaurant = "CREATE TABLE restaurant(
-    resto_name VARCHAR(50),
-    loc_id INT,
+    resto_name VARCHAR(50) PRIMARY KEY,
     menu VARCHAR(100),
+    loc_id INT,
     FOREIGN KEY (loc_id) REFERENCES establishmentLocation(loc_ID)
     )";
 
@@ -63,10 +63,10 @@ if ($conn->query($restaurant) === TRUE){
 
 
 $boarding_house = "CREATE TABLE boarding_house(
-    bhouse_name VARCHAR(50),
-    loc_id INT,
+    bhouse_name VARCHAR(50) PRIMARY KEY,
     availablrooms INT,
     rent INT,
+    loc_id INT,
     FOREIGN KEY (loc_id) REFERENCES establishmentLocation(loc_ID)
     )";
 
@@ -77,9 +77,9 @@ if ($conn->query($boarding_house) === TRUE){
 }
 
 $general_store = "CREATE TABLE general_store(
-    gstore_name VARCHAR(50),
-    loc_id INT,
+    gstore_name VARCHAR(50) PRIMARY KEY,
     products VARCHAR(100),
+    loc_id INT,
     FOREIGN KEY (loc_id) REFERENCES establishmentLocation(loc_ID)
     )";
 

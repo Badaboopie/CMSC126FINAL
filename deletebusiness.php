@@ -1,22 +1,60 @@
 <?php
 include 'dbconnector.php';
 
-$deletedbusiness = $_POST['loc_ID'];
+$deletedID = $_POST['loc_ID'];
+$deleteName = $_POST['loc_name'];
+$deletetype = $_POST['loc_type'];
 
-$genstore = "SELECT * FROM establishmentLocation inner join  general_store on       establishmentLocation.loc_ID = general_store.loc_id";
+switch($deletetype){
+    case 'Restaurant':
+        echo $deleteName;
+        echo $deletedID;
+        $delete_type_table = "DELETE FROM restaurant Where resto_name='$deleteName'";
+        $result = $conn->query($delete_type_table);
+        if (!$result) {
+            echo "DELETION FAILED";
+        }else{
+            echo $deleteID;
+            $delete_from_table = "DELETE FROM establishmentLocation Where loc_ID='$deletedID'";
+            $conn->query($delete_from_table);
+            echo "DELETED SUCCESSFULLY";
+        }
+        
+        break;
+    case 'Boarding House':
+        echo $deleteName;
+        echo $deletedID;
+        $delete_type_table = "DELETE FROM boarding_house Where bhouse_name='$deleteName'";
+        $result = $conn->query($delete_type_table);
+        if (!$result) {
+            echo "DELETION FAILED";
+        }else{
+            echo $deleteID;
+            $delete_from_table = "DELETE FROM establishmentLocation Where loc_ID='$deletedID'";
+            $conn->query($delete_from_table);
+            echo "DELETED SUCCESSFULLY";
+        }
+        break;
 
-$bh = "SELECT * FROM establishmentLocation inner join boarding_house on establishmentLocation.loc_ID = boarding_house.loc_id";
-
-$resto = "SELECT * FROM establishmentLocation inner join restaurant on establishmentLocation.loc_ID = restaurant.loc_id";
-
-if ($conn->query($genstore)) {
-    $delete = "DELETE FROM $genstore WHERE loc_ID = $deletedbusiness";
-    $result = $conn->query($delete);
-
-    if(!$result){
-        echo $conn->error;
-    }else{
-        echo "Successfully Deleted";
+    case 'General Store':
+        echo $deleteName;
+        echo $deletedID;
+        $delete_type_table = "DELETE FROM general_store Where gstore_name='$deleteName'";
+        $result = $conn->query($delete_type_table);
+        if (!$result) {
+            echo "DELETION FAILED";
+        }else{
+            echo $deleteID;
+            $delete_from_table = "DELETE FROM establishmentLocation Where loc_ID = '$deletedID'";
+            $conn->query($delete_from_table);
+            echo "DELETED SUCCESSFULLY";
+        }
+        break;
+    default:
+        echo 'Invalid location type';
+        break;
     }
-}
+
+    echo "<a href='home.php'>Return Home</a>";
+    header('refresh:1; url=Home.php');
 ?>
