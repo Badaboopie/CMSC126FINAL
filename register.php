@@ -52,5 +52,6 @@
                 </tr>
             </table>
         </form>
+        <a href="Home.php">Return</a>
     </body>
 </html>

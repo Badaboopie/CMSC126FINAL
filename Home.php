@@ -23,17 +23,19 @@ session_start();
         ?>
 
         <div class="search-container">
-            <div class="search">
-                <input type="text" class="search-input" placeholder="Search">
-                <img src="images/Vectorsearch-icon.png" alt="search icon">
-            </div>
+            <form action="searchResult.php" method="post">
+                <div class="search">
+                    <input type="text" name="search-input" class="search-input" placeholder="Search">
+                    <img src="images/Vectorsearch-icon.png" alt="search icon">
+                </div>
+            </form>
         </div>
 
         <div class="navBar">
             <ul>
-                <li><a href="">Restaurants</a></li>
-                <li><a href="">Boarding Houses</a></li>
-                <li><a href="">General Stores</a></li>
+                <li><a href="restaurant.php">Restaurants</a></li>
+                <li><a href="boardinghouse.php">Boarding Houses</a></li>
+                <li><a href="generalstore.php">General Stores</a></li>
             </ul>
         </div>
 
